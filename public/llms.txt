@@ -1,0 +1,63 @@
+# Business — Generative Engine Optimization Map
+
+---
+
+## Pages
+
+### בית
+https://example.com
+בית ציוני אמריקה בתל אביב הוא הבמה המושלמת לאירועי תרבות, כנסים והרצאות. חללים יוקרתיים עם עומק היסטורי ותשתית מקצועית מתקדמת. גלו את החוויה.
+
+### אירועים
+https://example.com/events
+גלו את לוח האירועים המלא של בית ציוני אמריקה — הרצאות, כנסים ואירועי תרבות בלב תל אביב. הזמינו מקום עוד היום ותהיו חלק מחוויה בלתי נשכחת.
+
+### גלריה
+https://example.com/gallery
+סיור ויזואלי בלעדי בחללי בית ציוני אמריקה — אולמות מרשימים לכנסים, הרצאות ואירועי תרבות בתל אביב. תמונות שיעשו לכם חשק להזמין את האירוע הבא כבר עכשיו.
+
+### בלוג
+https://example.com/blog
+טיפים מקצועיים, מאמרים על אירועי תרבות ועדכונים מעולם הכנסים וההרצאות — הבלוג של בית ציוני אמריקה הוא מקור הידע שלכם לתכנון אירוע מוצלח בתל אביב.
+
+### צור קשר
+https://example.com/contact
+צרו קשר עם צוות בית ציוני אמריקה לבירור זמינות ומחירים להשכרת אולמות לכנסים, הרצאות ואירועי תרבות בתל אביב. נחזור אליכם במהירות עם כל הפרטים.
+
+### Products
+https://example.com/products
+המוצרים שלנו - בית ציוני אמריקה
+
+### Product Detail
+https://example.com/product/:slug
+פרטי המוצר - בית ציוני אמריקה
+
+### Category
+https://example.com/category/:slug
+מוצרים - בית ציוני אמריקה
+
+## Legal & Policy
+
+### Privacy Policy
+https://example.com/privacy
+Information about how user data is collected, stored, and protected.
+
+### Terms & Conditions
+https://example.com/terms
+Legal terms describing service usage, rights, and policies.
+
+### Accessibility Statement
+https://example.com/accessibility
+Information about WCAG compliance and accessibility features.
+
+---
+
+# Business Context (for LLM understanding)
+
+## About Business
+---
+
+# Additional Resources
+
+- **Sitemap**: https://example.com/sitemap.xml
+- **Robots.txt**: https://example.com/robots.txt
