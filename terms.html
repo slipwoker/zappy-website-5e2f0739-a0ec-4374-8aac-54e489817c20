@@ -218,12 +218,12 @@
 })();
 </script>
 <!-- End Zappy Analytics -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     
     
     
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style id="zappy-legal-page-styles">
     /* Legal Page Original Styles */
     
@@ -354,19 +354,34 @@
 </head>
 <body>
 
+
+    <div class="mobile-search-panel" id="mobile-search-panel">
+      <div class="search-wrapper">
+        <input type="text" id="mobile-search-input" placeholder="חיפוש מוצרים..." autocomplete="off">
+        <button class="search-submit" id="mobile-search-submit" title="חיפוש">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </button>
+        <button class="close-search" id="close-mobile-search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="search-results" id="mobile-search-results"></div>
+    </div>
+  
+<script>window.ZAPPY_WEBSITE_ID = "5e2f0739-a0ec-4374-8aac-54e489817c20";window.ZAPPY_API_BASE = (window.location.pathname.includes('/preview') ? "https://api.zappy5.com" : "https://api.zappy5.com");</script>
     <nav class="navbar" dir="rtl">
   <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
     <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-      <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+      <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
     </svg>
     <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
-      <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+      <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
     </svg>
   </button>
 
   <button class="phone-header-btn" data-phone="[business_phone]" aria-label="Call">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
     </svg>
   </button>
 
@@ -379,13 +394,13 @@
 
     <li class="menu-item-has-children zappy-products-dropdown">
       <a href="/products">
-        מוצרים
+        אולמות
         <svg class="dropdown-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M6 9l6 6 6-6"></path>
+          <path d="M6 9l6 6 6-6"/>
         </svg>
       </a>
       <ul class="sub-menu" id="zappy-nav-category-links">
-        <li><a href="/products">כל המוצרים</a></li>
+        <li><a href="/products">כל האולמות</a></li>
         <!-- Categories will be loaded dynamically -->
       </ul>
     </li>
@@ -402,6 +417,16 @@
     
   </div>
 </nav>
+
+    <nav class="zappy-catalog-menu rtl" id="zappy-catalog-menu" dir="rtl" style="display:none">
+      <div class="catalog-menu-container">
+        <a href="/products" class="catalog-menu-item catalog-menu-all">כל המוצרים</a>
+        <div class="catalog-menu-categories" id="zappy-category-links">
+          <!-- Categories will be loaded dynamically -->
+        </div>
+      </div>
+    </nav>
+  
     <main>
     <div class="legal-page-wrapper"><div class="legal-container">
         <h1>תנאי שימוש</h1>
@@ -511,7 +536,7 @@
         
     </div></div>
     </main>
-    <footer class="site-footer" dir="rtl"><div class="footer-top"><div class="footer-container"><div class="footer-grid"><div class="footer-col footer-brand"><img src="/assets/logo.webp" alt="בית ציוני אמריקה" class="logo" /><p class="footer-tagline">מרחב תרבות, אירועים ואמנות<br>בלב תל אביב</p><div class="footer-social"><a href="[facebook_handle]" aria-label="Facebook" class="social-link"><i class="fab fa-facebook-f"></i></a><a href="[instagram_handle]" aria-label="Instagram" class="social-link"><i class="fab fa-instagram"></i></a><a href="[whatsapp_handle]" aria-label="WhatsApp" class="social-link"><i class="fab fa-whatsapp"></i></a></div></div><div class="footer-col footer-nav"><h4 class="footer-heading"><span class="heading-accent"></span>ניווט מהיר</h4><ul class="footer-links"><li><a href="/events">אירועים</a></li><li><a href="/gallery">גלריה</a></li><li><a href="/blog">בלוג</a></li><li><a href="/contact">צור קשר</a></li></ul></div><div class="footer-col footer-contact"><h4 class="footer-heading"><span class="heading-accent"></span>יצירת קשר</h4><ul class="footer-contact-list"><li><span class="contact-icon"><i class="fas fa-envelope"></i></span><a href="mailto:[business_email]">[business_email]</a></li><li><span class="contact-icon"><i class="fas fa-phone"></i></span><a href="tel:[business_phone]">[business_phone]</a></li><li><a href="/"><span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span><address>[business_address]</address></a></li></ul></div><div class="footer-col footer-hours"><h4 class="footer-heading"><span class="heading-accent"></span>שעות פעילות</h4><p class="hours-text">ראשון – חמישי<br><strong>09:00 – 22:00</strong></p><p class="hours-text">שישי<br><strong>09:00 – 14:00</strong></p><p class="hours-text">שבת<br><strong>לפי תיאום מראש</strong></p></div></div></div></div><div class="footer-divider"></div><div class="footer-bottom"><div class="footer-container"><div class="footer-bottom-inner"><p class="footer-copy">© 2026 בית ציוני אמריקה. כל הזכויות שמורות.</p><div class="footer-legal"><a href="/privacy">מדיניות פרטיות</a><span class="legal-sep"></span><a href="/terms">תנאי שימוש</a><span class="separator">|</span>
+    <footer class="site-footer" dir="rtl"><div class="footer-top"><div class="footer-container"><div class="footer-grid"><div class="footer-col footer-brand"><img src="/assets/logo.webp" alt="בית ציוני אמריקה" class="logo" /><p class="footer-tagline">מרחב תרבות, אירועים ואמנות<br />בלב תל אביב</p><div class="footer-social"><a href="[facebook_handle]" aria-label="Facebook" class="social-link"><i class="fab fa-facebook-f"></i></a><a href="[instagram_handle]" aria-label="Instagram" class="social-link"><i class="fab fa-instagram"></i></a><a href="[whatsapp_handle]" aria-label="WhatsApp" class="social-link"><i class="fab fa-whatsapp"></i></a></div></div><div class="footer-col footer-nav"><h4 class="footer-heading"><span class="heading-accent"></span>ניווט מהיר</h4><ul class="footer-links"><li><a href="/events">אירועים</a></li><li><a href="/gallery">גלריה</a></li><li><a href="/blog">בלוג</a></li><li><a href="/contact">צור קשר</a></li></ul></div><div class="footer-col footer-contact"><h4 class="footer-heading"><span class="heading-accent"></span>יצירת קשר</h4><ul class="footer-contact-list"><li><span class="contact-icon"><i class="fas fa-envelope"></i></span><a href="mailto:[business_email]">[business_email]</a></li><li><span class="contact-icon"><i class="fas fa-phone"></i></span><a href="tel:[business_phone]">[business_phone]</a></li><li><a href="/"><span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span><address>[business_address]</address></a></li></ul></div><div class="footer-col footer-hours"><h4 class="footer-heading"><span class="heading-accent"></span>שעות פעילות</h4><p class="hours-text">ראשון – חמישי<br /><strong>09:00 – 22:00</strong></p><p class="hours-text">שישי<br /><strong>09:00 – 14:00</strong></p><p class="hours-text">שבת<br /><strong>לפי תיאום מראש</strong></p></div></div></div></div><div class="footer-divider"></div><div class="footer-bottom"><div class="footer-container"><div class="footer-bottom-inner"><p class="footer-copy">© 2026 בית ציוני אמריקה. כל הזכויות שמורות.</p><div class="footer-legal"><a href="/privacy">מדיניות פרטיות</a><span class="legal-sep"></span><a href="/terms">תנאי שימוש</a><span class="separator">|</span>
             <a href="/return-policy" aria-label="מדיניות החזרות">
               מדיניות החזרות
             </a><span class="legal-sep"></span><a href="/accessibility">נגישות</a><span class="legal-sep"></span><a href="https://zappy5.com" target="_blank" class="zappy-attribution">נוצר באמצעות Zappy</a></div></div></div></div></footer>
