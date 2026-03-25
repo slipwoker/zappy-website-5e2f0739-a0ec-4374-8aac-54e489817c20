@@ -1,63 +1,79 @@
-# Business — Generative Engine Optimization Map
+# בית ציוני אמריקה — Generative Engine Optimization Map
+
+> Beit Tzioné America is a prestigious cultural and events venue located in Tel Aviv, offering halls for conferences, lectures, and cultural events. The venue blends Zionist heritage with a modern events experience, serving organizations and individuals seeking professional spaces with cultural significance. The site needs to showcase the venue's halls in a catalog format, manage upcoming events, and maintain an active blog and gallery.
 
 ---
 
 ## Pages
 
 ### בית
-https://example.com
+https://beittzioniamerica.zappy5.app
 בית ציוני אמריקה בתל אביב הוא הבמה המושלמת לאירועי תרבות, כנסים והרצאות. חללים יוקרתיים עם עומק היסטורי ותשתית מקצועית מתקדמת. גלו את החוויה.
 
 ### אירועים
-https://example.com/events
+https://beittzioniamerica.zappy5.app/events
 גלו את לוח האירועים המלא של בית ציוני אמריקה — הרצאות, כנסים ואירועי תרבות בלב תל אביב. הזמינו מקום עוד היום ותהיו חלק מחוויה בלתי נשכחת.
 
 ### גלריה
-https://example.com/gallery
+https://beittzioniamerica.zappy5.app/gallery
 סיור ויזואלי בלעדי בחללי בית ציוני אמריקה — אולמות מרשימים לכנסים, הרצאות ואירועי תרבות בתל אביב. תמונות שיעשו לכם חשק להזמין את האירוע הבא כבר עכשיו.
 
 ### בלוג
-https://example.com/blog
+https://beittzioniamerica.zappy5.app/blog
 טיפים מקצועיים, מאמרים על אירועי תרבות ועדכונים מעולם הכנסים וההרצאות — הבלוג של בית ציוני אמריקה הוא מקור הידע שלכם לתכנון אירוע מוצלח בתל אביב.
 
 ### צור קשר
-https://example.com/contact
+https://beittzioniamerica.zappy5.app/contact
 צרו קשר עם צוות בית ציוני אמריקה לבירור זמינות ומחירים להשכרת אולמות לכנסים, הרצאות ואירועי תרבות בתל אביב. נחזור אליכם במהירות עם כל הפרטים.
 
 ### Products
-https://example.com/products
+https://beittzioniamerica.zappy5.app/products
 המוצרים שלנו - בית ציוני אמריקה
 
 ### Product Detail
-https://example.com/product/:slug
+https://beittzioniamerica.zappy5.app/product/:slug
 פרטי המוצר - בית ציוני אמריקה
 
 ### Category
-https://example.com/category/:slug
+https://beittzioniamerica.zappy5.app/category/:slug
 מוצרים - בית ציוני אמריקה
 
 ## Legal & Policy
 
 ### Privacy Policy
-https://example.com/privacy
+https://beittzioniamerica.zappy5.app/privacy
 Information about how user data is collected, stored, and protected.
 
 ### Terms & Conditions
-https://example.com/terms
+https://beittzioniamerica.zappy5.app/terms
 Legal terms describing service usage, rights, and policies.
 
 ### Accessibility Statement
-https://example.com/accessibility
+https://beittzioniamerica.zappy5.app/accessibility
 Information about WCAG compliance and accessibility features.
 
 ---
 
 # Business Context (for LLM understanding)
 
-## About Business
+## About בית ציוני אמריקה
+Beit Tzioné America is a prestigious cultural and events venue located in Tel Aviv, offering halls for conferences, lectures, and cultural events. The venue blends Zionist heritage with a modern events experience, serving organizations and individuals seeking professional spaces with cultural significance. The site needs to showcase the venue's halls in a catalog format, manage upcoming events, and maintain an active blog and gallery.
+
+## Services/Products
+- השכרת אולמות לכנסים
+- אירועי הרצאות
+- אירועי תרבות
+- ניהול אירועים קרובים
+
+## Target Audience
+ארגונים, חברות ואנשים פרטיים המחפשים אולמות לכנסים, הרצאות ואירועי תרבות
+
+## Industry
+אולמות אירועים ותרבות
+
 ---
 
 # Additional Resources
 
-- **Sitemap**: https://example.com/sitemap.xml
-- **Robots.txt**: https://example.com/robots.txt
+- **Sitemap**: https://beittzioniamerica.zappy5.app/sitemap.xml
+- **Robots.txt**: https://beittzioniamerica.zappy5.app/robots.txt
