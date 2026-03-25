@@ -697,6 +697,8 @@ window.onload = function() {
 ;
 
 ;
+
+;
 /* ==ZAPPY E-COMMERCE JS START== */
 // E-commerce functionality
 (function() {
@@ -5115,6 +5117,7 @@ async function fetchAdditionalJsSettings(force) {
         // Hide the "All Products" link in catalog bar
         var allProdLink = document.querySelector('.catalog-menu-all');
         if (allProdLink) allProdLink.style.display = 'none';
+        collapseEmptyProductsDropdown();
       }
       // Handle show/hide stock status label
       if (data.data.showStockStatus === false) {
@@ -5543,7 +5546,10 @@ async function loadCatalogCategories() {
   try {
     var res = await fetch(buildApiUrlWithLang('/api/ecommerce/storefront/categories?websiteId=' + websiteId));
     var data = await res.json();
-    if (!data.success || !data.data?.length) return;
+    if (!data.success || !data.data?.length) {
+      collapseEmptyProductsDropdown();
+      return;
+    }
 
     var allCats = data.data;
     var childrenMap = {};
@@ -5613,6 +5619,40 @@ async function loadCatalogCategories() {
     }
   } catch (e) {
     console.error('Failed to load categories', e);
+  }
+  collapseEmptyProductsDropdown();
+}
+
+// When the nav dropdown has zero visible items (showAllProducts hidden + no categories),
+// convert it from a dropdown into a plain link so it doesn't render as an empty menu.
+function collapseEmptyProductsDropdown() {
+  var dropdown = document.querySelector('.zappy-products-dropdown');
+  var collapsed = document.querySelector('[data-zappy-products-collapsed]');
+  var el = dropdown || collapsed;
+  if (!el) return;
+  var navList = el.querySelector('#zappy-nav-category-links') || document.getElementById('zappy-nav-category-links');
+  if (!navList) return;
+
+  var items = navList.querySelectorAll('li');
+  var hasVisible = false;
+  for (var i = 0; i < items.length; i++) {
+    if (items[i].style.display !== 'none') { hasVisible = true; break; }
+  }
+
+  if (!hasVisible && dropdown) {
+    dropdown.classList.remove('menu-item-has-children', 'zappy-products-dropdown');
+    el.setAttribute('data-zappy-products-collapsed', 'true');
+    var arrow = el.querySelector('.dropdown-arrow');
+    if (arrow) arrow.style.display = 'none';
+    var subMenu = el.querySelector('.sub-menu, #zappy-nav-category-links');
+    if (subMenu) subMenu.style.setProperty('display', 'none', 'important');
+  } else if (hasVisible && collapsed) {
+    collapsed.classList.add('menu-item-has-children', 'zappy-products-dropdown');
+    collapsed.removeAttribute('data-zappy-products-collapsed');
+    var arrow2 = collapsed.querySelector('.dropdown-arrow');
+    if (arrow2) arrow2.style.display = '';
+    var subMenu2 = collapsed.querySelector('.sub-menu, #zappy-nav-category-links');
+    if (subMenu2) subMenu2.style.removeProperty('display');
   }
 }
 
@@ -6754,6 +6794,12 @@ function renderProductDetail(container, product, t) {
     </div>
   `;
   
+  // Hide stock status label if disabled in store settings
+  if (!additionalJsShowStockStatus) {
+    var stockEl = document.getElementById('product-stock-display');
+    if (stockEl) stockEl.style.display = 'none';
+  }
+
   // Store product data for add to cart
   window.currentProduct = product;
   window.selectedVariant = null;
