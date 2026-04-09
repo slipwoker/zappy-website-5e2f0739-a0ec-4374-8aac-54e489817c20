@@ -258,8 +258,8 @@
       .sub-menu a:hover { background-color: #f5f5f5; }
       /* RTL (Hebrew/Arabic) dropdown positioning */
       [dir="rtl"] .nav-menu .sub-menu, [dir="rtl"] nav .sub-menu, [dir="rtl"] .navbar .sub-menu, html[lang="he"] .nav-menu .sub-menu, html[lang="he"] nav .sub-menu, html[lang="he"] .navbar .sub-menu, html[lang="ar"] .nav-menu .sub-menu, html[lang="ar"] nav .sub-menu, html[lang="ar"] .navbar .sub-menu { left: auto !important; right: 0 !important; }
-      /* Hide empty dropdown menus */
-      .sub-menu:empty, .sub-menu:not(:has(li:not(.zappy-hidden-menu-item))), .sub-menu:not(:has(li)) { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+      /* Hide empty dropdown menus (exclude catalog sub-menus that use <a> children instead of <li>) */
+      .sub-menu:empty, .sub-menu:not(:has(li:not(.zappy-hidden-menu-item))):not(:has(> a)), .sub-menu:not(:has(li)):not(:has(> a)) { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
       /* Desktop: show submenu on Menu Group hover */
       li:has(.menu-group-title):hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
       /* Menu Group title styling */
@@ -268,7 +268,7 @@
       /* ========== MOBILE SUBMENU STYLES ========== */
       @media (max-width: 768px) {
         .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { position: static !important; transform: none !important; box-shadow: none !important; background: transparent !important; max-height: 0; overflow: hidden; opacity: 0; visibility: hidden; transition: max-height 0.3s ease, opacity 0.3s ease; padding: 0 !important; border-radius: 0 !important; }
-        .sub-menu.mobile-expanded { max-height: 500px !important; opacity: 1 !important; visibility: visible !important; padding: 8px 0 8px 16px !important; }
+        .sub-menu.mobile-expanded { max-height: 60vh !important; overflow-y: auto !important; opacity: 1 !important; visibility: visible !important; padding: 8px 0 8px 16px !important; }
         [dir="rtl"] .sub-menu.mobile-expanded, html[lang="he"] .sub-menu.mobile-expanded { padding: 8px 16px 8px 0 !important; }
         /* Disable hover behavior on mobile */
         .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 0; visibility: hidden; pointer-events: none; }
@@ -826,13 +826,13 @@
 </script>
   
   <main>
-    <section class="index-hero-section" data-layout-spec="בית-hero" dir="rtl" data-hero-type="fullscreen-scrim" id="zappy-section-0" style="position: relative; overflow: hidden; --zappy-bg-overlay: rgba(7, 8, 12, 0.35); margin-top: -72px !important; padding-top: 72px !important; min-height: 1124px !important;" data-zappy-content-align="center-center" data-zappy-bg-type="video" data-zappy-bg-color="" data-zappy-bg-image="" data-zappy-bg-overlay-color="#07080c" data-zappy-bg-overlay-opacity="35" data-zappy-bg-video-type="generated" data-zappy-bg-video-url="assets/section-video-1774436781873.mp4"><style data-zappy-align-style="true">#zappy-section-0 > [data-zappy-align-target] { margin-top: auto !important; margin-bottom: auto !important; margin-left: auto !important; margin-right: auto !important; align-items: center !important; justify-content: center !important; } #zappy-section-0 > [data-zappy-align-target] > * { justify-content: center !important; }  @media (max-width: 768px) { #zappy-section-0 > [data-zappy-align-target] { align-items: center !important; justify-content: center !important; margin-top: auto !important; margin-bottom: auto !important; margin-left: auto !important; margin-right: auto !important; } #zappy-section-0 > [data-zappy-align-target] > * { margin-left: auto !important; margin-right: auto !important; } }</style><div class="zappy-section-video-bg" style="position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;"><div class="zappy-section-video-overlay" style="position:absolute;inset:0;z-index:1;background:rgba(7, 8, 12, 0.35);pointer-events:none;"></div><video class="zappy-section-video" autoplay="" muted="" loop="" playsinline="" style="position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;transform:translate(-50%, -50%);object-fit:cover;z-index:0;">
+    <section class="index-hero-section" data-layout-spec="בית-hero" dir="rtl" data-hero-type="fullscreen-scrim" id="zappy-section-0" style="position: relative; overflow: hidden; --zappy-bg-overlay: rgba(7, 8, 12, 0.35); margin-top: -72px !important; padding-top: 72px !important; min-height: 1124px !important;" data-zappy-content-align="center-center" data-zappy-bg-type="video" data-zappy-bg-color="" data-zappy-bg-image="" data-zappy-bg-overlay-color="#07080c" data-zappy-bg-overlay-opacity="35" data-zappy-bg-video-type="generated" data-zappy-bg-video-url="assets/section-video-1774436781873.mp4"><div class="zappy-section-video-bg" style="position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;"><div class="zappy-section-video-overlay" style="position:absolute;inset:0;z-index:1;background:rgba(7, 8, 12, 0.35);pointer-events:none;"></div><video class="zappy-section-video" autoplay="" muted="" loop="" playsinline="" style="position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;transform:translate(-50%, -50%);object-fit:cover;z-index:0;">
   <source src="/assets/section-video-1774436781873.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video></div>
   <!-- Background Image Layer -->
   <div class="index-hero-bg" style="display: none" data-zappy-original-bg="hidden">
-    <img data-hero-bg="true" data-placeholder="index-hero-image-1" data-context="Cinematic wide-angle interior of a prestigious Israeli auditorium with deep burgundy velvet theater seating arranged in rows, matte black acoustic walls, and a brightly lit stage with warm spotlights creating dramatic contrast against the dark room. The atmosphere is intimate and culturally rich, evoking a high-end conference and cultural events venue in Tel Aviv. Shot from a mid-level angle showing the full depth of the hall." width="1920" height="1080" src="/assets/site-index-hero-image-1.webp" alt="אולם האירועים של בית ציוני אמריקה – כסאות בורדו ובמה מוארת" data-hero-background="true" data-element-type="image" data-element-id="img-1774436600628-1ik9r357f" class="zappy-editable-image" data-resize-handler-attached="true" style="object-position: 50% 50%;">
+    <img data-hero-bg="true" data-placeholder="index-hero-image-1" data-context="Cinematic wide-angle interior of a prestigious Israeli auditorium with deep burgundy velvet theater seating arranged in rows, matte black acoustic walls, and a brightly lit stage with warm spotlights creating dramatic contrast against the dark room. The atmosphere is intimate and culturally rich, evoking a high-end conference and cultural events venue in Tel Aviv. Shot from a mid-level angle showing the full depth of the hall." width="1920" height="1080" src="/assets/site-index-hero-image-1.webp" alt="אולם האירועים של בית ציוני אמריקה – כסאות בורדו ובמה מוארת" data-hero-background="true" data-element-type="image" data-element-id="img-1774436600628-1ik9r357f" class="zappy-editable-image" style="object-position: 50% 50%;">
   </div>
 
   <!-- Scrim Overlay -->
@@ -906,7 +906,7 @@
       <h2 class="index-story-heading">מקום בו מורשת ציונית <em>פוגשת</em> אירוע עכשווי</h2>
       <p class="index-story-body">בית ציוני אמריקה הוא אחד ממוקדי התרבות הוותיקים והמכובדים בתל אביב. מזה עשרות שנים משמש המקום במה לכנסים, הרצאות ואירועי תרבות שמעצבים את השיח הציבורי בישראל. כאן, בין קירות טעונים היסטוריה, מתקיימים הרגעים שנשארים.</p>
 
-      <ul class="index-story-pillars zappy-vertical-grid">
+      <ul class="index-story-pillars">
         <li class="index-story-pillar-item zappy-grid-item-nested-grid" data-grid-item-index="0">
           <div class="index-story-pillar-icon">
             <svg data-element-type="icon" data-icon-type="svg" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -952,7 +952,7 @@
     <!-- Image Column (END = LEFT in RTL) -->
     <figure class="index-story-figure">
       <div class="index-story-img-wrapper">
-        <img data-placeholder="index-story-image-1" data-context="Elegant lobby or grand hall interior of Beit Tzioni America cultural venue in Tel Aviv — warm Mediterranean daylight streaming through tall windows, architectural heritage details, cream and stone tones, ornate ceiling, rows of chairs set for a lecture or cultural event, quiet institutional dignity" width="600" height="820" src="/assets/site-index-story-image-1.webp" alt="לובי ואולם בית ציוני אמריקה תל אביב — אור יום ים-תיכוני, פרטים אדריכליים היסטוריים" data-element-type="image" data-element-id="img-1774439181607-wdmv4b9b1" class="zappy-editable-image" data-original-position="static" style="position: relative;" data-resize-handler-attached="true">
+        <img data-placeholder="index-story-image-1" data-context="Elegant lobby or grand hall interior of Beit Tzioni America cultural venue in Tel Aviv — warm Mediterranean daylight streaming through tall windows, architectural heritage details, cream and stone tones, ornate ceiling, rows of chairs set for a lecture or cultural event, quiet institutional dignity" width="600" height="820" src="/assets/site-index-story-image-1.webp" alt="לובי ואולם בית ציוני אמריקה תל אביב — אור יום ים-תיכוני, פרטים אדריכליים היסטוריים" data-element-type="image" data-element-id="img-1774439181607-wdmv4b9b1" class="zappy-editable-image" >
       </div>
       <div class="index-story-img-caption">
         <span>בית ציוני אמריקה, תל אביב</span>
@@ -981,12 +981,12 @@
 
     <!-- Panoramic Image Band -->
     <div class="index-features-panorama">
-      <img data-placeholder="index-features-image-1" data-context="Wide panoramic interior shot of a prestigious Israeli cultural auditorium — rows of deep burgundy seating arranged in precise geometry, a dark stage with dramatic spotlighting, black architectural framing on walls and ceiling, warm amber light falling on the stage, cinematic depth of field, editorial photography style, no people" width="1200" height="420" src="/assets/site-index-features-image-1.webp" alt="אולם בית ציוני אמריקה — נוף פנורמי של מושבי הבורדו והבמה" data-element-type="image" data-element-id="img-1774427605423-dt8wmpgz4" class="zappy-editable-image" data-original-position="static" style="position: relative;">
+      <img data-placeholder="index-features-image-1" data-context="Wide panoramic interior shot of a prestigious Israeli cultural auditorium — rows of deep burgundy seating arranged in precise geometry, a dark stage with dramatic spotlighting, black architectural framing on walls and ceiling, warm amber light falling on the stage, cinematic depth of field, editorial photography style, no people" width="1200" height="420" src="/assets/site-index-features-image-1.webp" alt="אולם בית ציוני אמריקה — נוף פנורמי של מושבי הבורדו והבמה" data-element-type="image" data-element-id="img-1774427605423-dt8wmpgz4" class="zappy-editable-image" >
       <div class="index-features-panorama-overlay"></div>
     </div>
 
     <!-- Feature Cards Grid -->
-    <div class="index-features-cards zappy-preserve-css-grid" id="zappy-auto-grid-1774427605429-3lu7x4" data-zappy-auto-grid="true" data-original-item-width="363" data-original-gap="24px" style="display: grid; --zappy-grid-cols: repeat(3, minmax(0, 1fr));" data-zappy-explicit-columns="true">
+    <div class="index-features-cards zappy-preserve-css-grid" id="zappy-auto-grid-1774427605429-3lu7x4" data-zappy-auto-grid="true" data-original-item-width="363" data-original-gap="24px" style="display: grid; --zappy-grid-cols: repeat(3, minmax(0, 1fr)); grid-template-columns: repeat(3, minmax(0, 1fr))" data-zappy-explicit-columns="true">
 
       
 
@@ -994,7 +994,7 @@
 
       <article class="index-features-card index-features-card--with-image">
         <div class="index-features-card-image-wrap">
-          <img data-placeholder="index-features-image-2" data-context="Elegant lobby or foyer of a prestigious Tel Aviv cultural venue at night — polished stone floors, warm architectural lighting, framed historical Zionist photography on dark walls, clean modernist lines, no people, editorial atmosphere" width="480" height="320" src="/assets/site-index-features-image-2.webp" alt="לובי בית ציוני אמריקה — אווירה תרבותית ייחודית" data-element-type="image" data-element-id="img-1774427605423-peh8vr705" class="zappy-editable-image" data-original-position="static" style="position: relative;">
+          <img data-placeholder="index-features-image-2" data-context="Elegant lobby or foyer of a prestigious Tel Aviv cultural venue at night — polished stone floors, warm architectural lighting, framed historical Zionist photography on dark walls, clean modernist lines, no people, editorial atmosphere" width="480" height="320" src="/assets/site-index-features-image-2.webp" alt="לובי בית ציוני אמריקה — אווירה תרבותית ייחודית" data-element-type="image" data-element-id="img-1774427605423-peh8vr705" class="zappy-editable-image" >
         </div>
         <div class="index-features-card-body">
           <div class="index-features-card-icon">
@@ -1005,25 +1005,25 @@
         </div>
       </article><article class="index-features-card index-features-card--with-image" style="background-color: rgb(24, 26, 32) !important;">
         <div class="index-features-card-image-wrap">
-          <div data-zappy-zoom-wrapper="true" data-element-id="new-grid-img-1774427610148-0-ph5ecnhdi" data-element-type="image" data-zappy-zoom-wrapper-width="361px" data-zappy-zoom-wrapper-height="209px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" style="position: relative !important; overflow: hidden !important; width: 361px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 209px !important; display: block !important;"><img data-placeholder="image-placeholder" data-context="Elegant lobby or foyer of a prestigious Tel Aviv cultural venue at night — polished stone floors, warm architectural lighting, framed historical Zionist photography on dark walls, clean modernist lines, no people, editorial atmosphere" width="480" height="320" src="/assets/image-image-placeholder-1774427796841-gorrvg.webp?v=1774427798637" alt="Image placeholder" data-element-type="image" data-element-id="new-grid-img-1774427610148-0-ph5ecnhdi" class="zappy-editable-image" data-original-position="static" style="position: absolute !important; cursor: pointer; object-position: 50% 50%; margin-top: 0px !important; margin-bottom: 0px !important; left: -1.5% !important; top: -37.5551% !important; width: 103% !important; height: 175.11% !important; max-width: none !important; max-height: none !important; display: block; object-fit: cover;" id="new-grid-img-1774427610148-0-ph5ecnhdi" data-ai-slot="grid-item-image" data-zappy-zoom="1.03" data-zappy-original-width="360.6640625" data-zappy-original-height="209"></div>
+          <div data-zappy-zoom-wrapper="true" data-element-id="new-grid-img-1774427610148-0-ph5ecnhdi" data-element-type="image" data-zappy-zoom-wrapper-width="361px" data-zappy-zoom-wrapper-height="209px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" style="position: relative !important; overflow: hidden !important; width: 361px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 209px !important; display: block !important;"><img data-placeholder="image-placeholder" data-context="Elegant lobby or foyer of a prestigious Tel Aviv cultural venue at night — polished stone floors, warm architectural lighting, framed historical Zionist photography on dark walls, clean modernist lines, no people, editorial atmosphere" width="480" height="320" src="/assets/image-image-placeholder-1774427796841-gorrvg.webp?v=1774427798637" alt="Image placeholder" data-element-type="image" data-element-id="new-grid-img-1774427610148-0-ph5ecnhdi" class="zappy-editable-image" style="position: absolute !important; cursor: pointer; object-position: 50% 50%; margin-top: 0px !important; margin-bottom: 0px !important; left: -1.5% !important; top: -37.5551% !important; width: 103% !important; height: 175.11% !important; max-width: none !important; max-height: none !important; display: block; object-fit: cover;" id="new-grid-img-1774427610148-0-ph5ecnhdi" data-ai-slot="grid-item-image" data-zappy-zoom="1.03" data-zappy-original-width="360.6640625" data-zappy-original-height="209"></div>
         </div>
         <div class="index-features-card-body">
           <div class="index-features-card-icon">
             <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-element-id="icon-1774427610147-zmxwp8yps"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
           </div>
-          <h3 class="index-features-card-title" style="cursor: text;">מוכנות טכנית מקצועית</h3>
-          <p class="index-features-card-text" style="cursor: text;">מערכות הגברה מתקדמות, ציוד הקרנה באיכות גבוהה, תאורה מבוקרת ותשתית דיגיטלית מלאה - הכל מוכן מראש כדי שהאירוע שלכם יתנהל ללא עיכובים.</p>
+          <h3 class="index-features-card-title" >מוכנות טכנית מקצועית</h3>
+          <p class="index-features-card-text" >מערכות הגברה מתקדמות, ציוד הקרנה באיכות גבוהה, תאורה מבוקרת ותשתית דיגיטלית מלאה - הכל מוכן מראש כדי שהאירוע שלכם יתנהל ללא עיכובים.</p>
         </div>
       </article><article class="index-features-card index-features-card--with-image" style="background-color: rgb(24, 26, 32) !important;">
         <div class="index-features-card-image-wrap">
-          <div data-zappy-zoom-wrapper="true" data-element-id="new-grid-img-1774427628631-0-40maiv9lr" data-element-type="image" data-zappy-zoom-wrapper-width="361px" data-zappy-zoom-wrapper-height="209px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" style="position: relative !important; overflow: hidden !important; width: 361px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 209px !important; display: block !important;"><img data-placeholder="image-placeholder" data-context="Elegant lobby or foyer of a prestigious Tel Aviv cultural venue at night — polished stone floors, warm architectural lighting, framed historical Zionist photography on dark walls, clean modernist lines, no people, editorial atmosphere" width="480" height="320" src="/assets/image-image-placeholder-1774427687370-tupixi.webp?v=1774427689223" alt="Image placeholder" data-element-type="image" data-element-id="new-grid-img-1774427628631-0-40maiv9lr" class="zappy-editable-image" data-original-position="static" style="position: absolute !important; cursor: pointer; object-position: 50% 50%; margin-top: 0px !important; margin-bottom: 0px !important; left: -1.4895% !important; top: -37.5373% !important; width: 102.979% !important; height: 175.075% !important; max-width: none !important; max-height: none !important; display: block; object-fit: cover;" id="new-grid-img-1774427628631-0-40maiv9lr" data-ai-slot="grid-item-image" data-zappy-zoom="1.02979" data-zappy-original-width="360.6640625" data-zappy-original-height="209"></div>
+          <div data-zappy-zoom-wrapper="true" data-element-id="new-grid-img-1774427628631-0-40maiv9lr" data-element-type="image" data-zappy-zoom-wrapper-width="361px" data-zappy-zoom-wrapper-height="209px" data-zappy-zoom-wrapper-width-mode="px" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" style="position: relative !important; overflow: hidden !important; width: 361px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 209px !important; display: block !important;"><img data-placeholder="image-placeholder" data-context="Elegant lobby or foyer of a prestigious Tel Aviv cultural venue at night — polished stone floors, warm architectural lighting, framed historical Zionist photography on dark walls, clean modernist lines, no people, editorial atmosphere" width="480" height="320" src="/assets/image-image-placeholder-1774427687370-tupixi.webp?v=1774427689223" alt="Image placeholder" data-element-type="image" data-element-id="new-grid-img-1774427628631-0-40maiv9lr" class="zappy-editable-image" style="position: absolute !important; cursor: pointer; object-position: 50% 50%; margin-top: 0px !important; margin-bottom: 0px !important; left: -1.4895% !important; top: -37.5373% !important; width: 102.979% !important; height: 175.075% !important; max-width: none !important; max-height: none !important; display: block; object-fit: cover;" id="new-grid-img-1774427628631-0-40maiv9lr" data-ai-slot="grid-item-image" data-zappy-zoom="1.02979" data-zappy-original-width="360.6640625" data-zappy-original-height="209"></div>
         </div>
         <div class="index-features-card-body">
           <div class="index-features-card-icon">
             <svg data-element-type="icon" data-icon-type="svg" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-element-id="icon-1774427610147-zmxwp8yps-add-1774427628631-r4sfy7"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
           </div>
-          <h3 class="index-features-card-title" style="cursor: text;">פורמטים גמישים לכל אירוע</h3>
-          <p class="index-features-card-text" style="cursor: text;">אולמותינו מתאימים לקונפיגורציות מגוונות - מכנסי מליאה גדולים ועד סמינרים אינטימיים, הרצאות פאנל וערבי תרבות. כל מרחב מתוכנן להתאים לצרכים המשתנים של הארגון שלכם.</p>
+          <h3 class="index-features-card-title" >פורמטים גמישים לכל אירוע</h3>
+          <p class="index-features-card-text" >אולמותינו מתאימים לקונפיגורציות מגוונות - מכנסי מליאה גדולים ועד סמינרים אינטימיים, הרצאות פאנל וערבי תרבות. כל מרחב מתוכנן להתאים לצרכים המשתנים של הארגון שלכם.</p>
         </div>
       </article>
 
@@ -1060,7 +1060,7 @@
     <div class="index-agenda-body">
 
       <!-- Event Cards Grid -->
-      <div class="index-agenda-grid zappy-preserve-css-grid" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));" id="zappy-auto-grid-1774427857765-sqonkb" data-zappy-auto-grid="true" data-original-item-width="287" data-original-gap="24px" data-zappy-explicit-columns="true"><article class="index-agenda-card">
+      <div class="index-agenda-grid zappy-preserve-css-grid" style="--zappy-grid-cols: repeat(3, minmax(0, 1fr)); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));" id="zappy-auto-grid-1774427857765-sqonkb" data-zappy-auto-grid="true" data-original-item-width="287" data-original-gap="24px" data-zappy-explicit-columns="true"><article class="index-agenda-card">
           <div class="index-agenda-card-date">
             <span class="index-agenda-day">12</span>
             <span class="index-agenda-month">יולי</span>
@@ -1205,7 +1205,7 @@
 </section>
   </main>
   
-  <footer class="site-footer" dir="rtl"><div class="footer-top"><div class="footer-container"><div class="footer-grid"><div class="footer-col footer-brand"><img src="/assets/logo-1774436592305-o066zt.webp?v=1774436592756-jxbox2" alt="בית ציוני אמריקה" class="logo zappy-editable-image" data-element-type="image" data-element-id="img-1774373915816-154qonxbc" data-original-position="static" style="position: relative;" data-resize-handler-attached="true"><p class="footer-tagline">מרחב תרבות, אירועים ואמנות<br>בלב תל אביב</p><div class="footer-social"><a href="#" aria-label="Facebook" class="social-link" style="display:none !important;"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Instagram" class="social-link" style="display:none !important;"><i class="fab fa-instagram" data-element-type="icon" data-element-id="icon-1774373915815-g53cdclb2" data-icon-type="fontawesome"></i></a><a href="#" aria-label="WhatsApp" class="social-link" style="display:none !important;"><i class="fab fa-whatsapp" data-element-type="icon" data-element-id="icon-1774373915815-or8e34epd" data-icon-type="fontawesome"></i></a></div></div><div class="footer-col footer-nav"><h4 class="footer-heading"><span class="heading-accent"></span>ניווט מהיר</h4><ul class="footer-links"><li><a href="/events">אירועים</a></li><li><a href="/gallery">גלריה</a></li><li><a href="/blog">בלוג</a></li><li><a href="/contact">צור קשר</a></li></ul></div><div class="footer-col footer-contact"><h4 class="footer-heading"><span class="heading-accent"></span>יצירת קשר</h4><ul class="footer-contact-list" style=""><li><span class="contact-icon"><i class="fas fa-envelope" data-element-type="icon" data-element-id="icon-1774373915815-1gswsqo9s" data-icon-type="fontawesome" style="cursor: pointer;"></i></span><a href="mailto:info@zoatlv.co.il">info@zoatlv.co.il</a></li><li><span class="contact-icon"><i class="fas fa-phone" data-element-type="icon" data-element-id="icon-1774373915815-hmkbl4asw" data-icon-type="fontawesome" style="cursor: pointer;"></i></span><a href="tel:03-6959341">03-6959341</a></li><li><a href="/"><span class="contact-icon"><i class="fas fa-map-marker-alt" style="cursor: pointer;"></i></span></a><a href="/" style="display: inline !important;"><address style="display: inline !important;">רחוב דניאל פריש 1, תל אביב, ישראל</address></a></li></ul></div><div class="footer-col footer-hours"><h4 class="footer-heading"><span class="heading-accent"></span>שעות פעילות</h4><p class="hours-text" style="">ראשון – חמישי<br><strong>09:00 – 22:00</strong></p><p class="hours-text" style="">שישי<br><strong>09:00 – 14:00</strong></p><p class="hours-text" style="">שבת<br><strong>לפי תיאום מראש</strong></p></div></div></div></div><div class="footer-divider"></div><div class="footer-bottom"><div class="footer-container"><div class="footer-bottom-inner"><p class="footer-copy">© 2026 בית ציוני אמריקה. כל הזכויות שמורות.</p><div class="footer-legal"><a href="/privacy">מדיניות פרטיות</a><span class="legal-sep"></span><a href="/terms">תנאי שימוש</a><span class="separator">|</span>
+  <footer class="site-footer" dir="rtl"><div class="footer-top"><div class="footer-container"><div class="footer-grid"><div class="footer-col footer-brand"><img src="/assets/logo-1774436592305-o066zt.webp?v=1774436592756-jxbox2" alt="בית ציוני אמריקה" class="logo" data-element-type="image" data-element-id="img-1774373915816-154qonxbc" ><p class="footer-tagline">מרחב תרבות, אירועים ואמנות<br>בלב תל אביב</p><div class="footer-social"><a href="#" aria-label="Facebook" class="social-link" style="display:none !important;"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Instagram" class="social-link" style="display:none !important;"><i class="fab fa-instagram" data-element-type="icon" data-element-id="icon-1774373915815-g53cdclb2" data-icon-type="fontawesome"></i></a><a href="#" aria-label="WhatsApp" class="social-link" style="display:none !important;"><i class="fab fa-whatsapp" data-element-type="icon" data-element-id="icon-1774373915815-or8e34epd" data-icon-type="fontawesome"></i></a></div></div><div class="footer-col footer-nav"><h4 class="footer-heading"><span class="heading-accent"></span>ניווט מהיר</h4><ul class="footer-links"><li><a href="/events">אירועים</a></li><li><a href="/gallery">גלריה</a></li><li><a href="/blog">בלוג</a></li><li><a href="/contact">צור קשר</a></li></ul></div><div class="footer-col footer-contact"><h4 class="footer-heading"><span class="heading-accent"></span>יצירת קשר</h4><ul class="footer-contact-list" ><li><span class="contact-icon"><i class="fas fa-envelope" data-element-type="icon" data-element-id="icon-1774373915815-1gswsqo9s" data-icon-type="fontawesome" style="cursor: pointer;"></i></span><a href="mailto:info@zoatlv.co.il">info@zoatlv.co.il</a></li><li><span class="contact-icon"><i class="fas fa-phone" data-element-type="icon" data-element-id="icon-1774373915815-hmkbl4asw" data-icon-type="fontawesome" style="cursor: pointer;"></i></span><a href="tel:03-6959341">03-6959341</a></li><li><a href="/"><span class="contact-icon"><i class="fas fa-map-marker-alt" style="cursor: pointer;"></i></span></a><a href="/" style="display: inline !important;"><address style="display: inline !important;">רחוב דניאל פריש 1, תל אביב, ישראל</address></a></li></ul></div><div class="footer-col footer-hours"><h4 class="footer-heading"><span class="heading-accent"></span>שעות פעילות</h4><p class="hours-text" >ראשון – חמישי<br><strong>09:00 – 22:00</strong></p><p class="hours-text" >שישי<br><strong>09:00 – 14:00</strong></p><p class="hours-text" >שבת<br><strong>לפי תיאום מראש</strong></p></div></div></div></div><div class="footer-divider"></div><div class="footer-bottom"><div class="footer-container"><div class="footer-bottom-inner"><p class="footer-copy">© 2026 בית ציוני אמריקה. כל הזכויות שמורות.</p><div class="footer-legal"><a href="/privacy">מדיניות פרטיות</a><span class="legal-sep"></span><a href="/terms">תנאי שימוש</a><span class="separator">|</span>
             <a href="/return-policy" aria-label="מדיניות החזרות">
               מדיניות החזרות
             </a><span class="legal-sep"></span><a href="/accessibility">נגישות</a><span class="legal-sep"></span><a href="https://zappy5.com" target="_blank" class="zappy-attribution">נוצר באמצעות Zappy</a></div></div></div></div></footer>
@@ -1396,29 +1396,116 @@
 
     <script>
     (function(){
-      if(window.innerWidth>768)return;
-      function fixZW(){
+      var _applied=false;
+      function _isHeroBg(w){var img=w.querySelector('img');if(img&&(img.getAttribute('data-hero-bg')==='true'||img.getAttribute('data-hero-background')==='true'))return true;var p=(w.style.position||'').replace(/\s*!important\s*/g,'').trim();var ww=(w.style.width||'').replace(/\s*!important\s*/g,'').trim();var hh=(w.style.height||'').replace(/\s*!important\s*/g,'').trim();return p==='absolute'&&ww==='100%'&&hh==='100%';}
+      function fixDesktopWrappers(){
+        // No-op: desktop wrapper restoration is handled by ZAPPY_PUBLISHED_ZOOM_WRAPPER_RUNTIME
+        // in script.js (restoreWrapperDimensions). The old inflation logic here was expanding
+        // small wrappers (e.g. 139px logo wrappers) to their parent width, conflicting with
+        // the correct stored dimensions.
+      }
+      function applyMobile(){
+        if(_applied)return;_applied=true;
         document.querySelectorAll('[data-zappy-zoom-wrapper="true"]').forEach(function(w){
           var cw=w.style.getPropertyValue('width');
           if(!cw||cw==='100%')return;
-          w.style.setProperty('width','100%','important');
-          w.style.setProperty('max-width','100%','important');
-          w.style.setProperty('height','auto','important');
+          if(!w._zappyDesktop)w._zappyDesktop={wStyle:w.getAttribute('style')};
           var img=w.querySelector('img');
-          if(img){
+          if(!img)return;
+          if(!img._zappyDesktop)img._zappyDesktop={src:img.getAttribute('src'),style:img.getAttribute('style')};
+          var mobileZoom=parseFloat(img.getAttribute('data-zappy-mobile-zoom'));
+          var mobileSrc=img.getAttribute('data-zappy-mobile-src');
+          var mobilePos=img.getAttribute('data-zappy-mobile-object-position');
+          var parentOvf=w.parentElement?((w.parentElement.style.overflow||'')+(window.getComputedStyle(w.parentElement).overflow||'')).trim():'';
+          var inConstrainedParent=parentOvf.indexOf('hidden')!==-1||parentOvf.indexOf('clip')!==-1;
+          if(inConstrainedParent){
+            w.style.setProperty('max-width','100%','important');
+          }else{
+            w.style.setProperty('width','100%','important');
+            w.style.setProperty('max-width','100%','important');
+          }
+          if(mobileSrc)img.src=mobileSrc;
+          var pos=mobilePos||img.style.getPropertyValue('object-position')||'50% 50%';
+          if(mobileZoom>1){
+            var wH=w.getAttribute('data-zappy-zoom-wrapper-height');
+            w.style.setProperty('height',wH||'200px','important');
+            img.style.setProperty('position','relative','important');
+            img.style.setProperty('width','100%','important');
+            img.style.setProperty('height','auto','important');
+            img.style.setProperty('min-height','100%','important');
+            img.style.setProperty('max-width','none','important');
+            img.style.setProperty('max-height','none','important');
+            img.style.setProperty('object-fit','cover','important');
+            img.style.setProperty('left','0','important');
+            img.style.setProperty('top','0','important');
+            img.style.setProperty('object-position',pos,'important');
+            img.style.setProperty('transform','scale('+mobileZoom+')','important');
+            img.style.setProperty('transform-origin',pos,'important');
+          }else{
+            if(!inConstrainedParent)w.style.setProperty('height','auto','important');
             img.style.setProperty('position','relative','important');
             img.style.setProperty('width','100%','important');
             img.style.setProperty('height','auto','important');
             img.style.setProperty('max-width','100%','important');
-            img.style.setProperty('max-height','400px','important');
+            img.style.setProperty('max-height',inConstrainedParent?'none':'400px','important');
             img.style.setProperty('object-fit','cover','important');
             img.style.setProperty('left','0','important');
             img.style.setProperty('top','0','important');
+            img.style.setProperty('transform','none','important');
+            if(mobilePos)img.style.setProperty('object-position',pos,'important');
+          }
+        });
+        document.querySelectorAll('img[data-zappy-mobile-src],img[data-zappy-mobile-object-position],img[data-zappy-mobile-zoom]').forEach(function(img){
+          var zw=img.closest('[data-zappy-zoom-wrapper="true"]');
+          if(zw&&!_isHeroBg(zw))return;
+          if(!img._zappyDesktop)img._zappyDesktop={src:img.getAttribute('src'),style:img.getAttribute('style')};
+          var mobileSrc=img.getAttribute('data-zappy-mobile-src');
+          var mobilePos=img.getAttribute('data-zappy-mobile-object-position');
+          var mobileZoom=parseFloat(img.getAttribute('data-zappy-mobile-zoom'));
+          if(mobileSrc)img.src=mobileSrc;
+          if(mobilePos)img.style.setProperty('object-position',mobilePos,'important');
+          if(mobileZoom>1){
+            img.style.setProperty('transform','scale('+mobileZoom+')','important');
+            img.style.setProperty('transform-origin',mobilePos||'50% 50%','important');
+            var p=img.parentElement;
+            if(p)p.style.setProperty('overflow','hidden','important');
           }
         });
       }
-      if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',fixZW);
-      else setTimeout(fixZW,50);
+      function revertDesktop(){
+        if(!_applied)return;_applied=false;
+        document.querySelectorAll('[data-zappy-zoom-wrapper="true"]').forEach(function(w){
+          if(w._zappyDesktop&&w._zappyDesktop.wStyle!=null){w.setAttribute('style',w._zappyDesktop.wStyle);}
+          var img=w.querySelector('img');
+          if(img&&img._zappyDesktop){
+            if(img._zappyDesktop.src!=null)img.setAttribute('src',img._zappyDesktop.src);
+            if(img._zappyDesktop.style!=null)img.setAttribute('style',img._zappyDesktop.style);
+            else img.removeAttribute('style');
+          }
+        });
+        document.querySelectorAll('img[data-zappy-mobile-src],img[data-zappy-mobile-object-position],img[data-zappy-mobile-zoom]').forEach(function(img){
+          var zw=img.closest('[data-zappy-zoom-wrapper="true"]');
+          if(zw&&!_isHeroBg(zw))return;
+          if(img._zappyDesktop){
+            if(img._zappyDesktop.src!=null)img.setAttribute('src',img._zappyDesktop.src);
+            if(img._zappyDesktop.style!=null)img.setAttribute('style',img._zappyDesktop.style);
+            else img.removeAttribute('style');
+          }
+        });
+        _fixHeroBgWrappers();
+        fixDesktopWrappers();
+      }
+      function _fixHeroBgWrappers(){var isMob=window.innerWidth<=768;document.querySelectorAll('[data-zappy-zoom-wrapper="true"]').forEach(function(w){if(!_isHeroBg(w))return;w.style.setProperty('position','absolute','important');w.style.setProperty('top','0','important');w.style.setProperty('left','0','important');w.style.setProperty('width','100%','important');w.style.setProperty('height','100%','important');w.style.setProperty('max-width','none','important');w.style.setProperty('overflow','hidden','important');w.setAttribute('data-zappy-zoom-wrapper-width-mode','full');var img=w.querySelector('img');if(img){img.style.setProperty('width','100%','important');img.style.setProperty('height','100%','important');img.style.setProperty('object-fit','cover','important');img.style.setProperty('position','relative','important');img.style.setProperty('top','0','important');img.style.setProperty('left','0','important');img.style.setProperty('max-width','none','important');img.style.setProperty('max-height','none','important');img.style.setProperty('display','block','important');if(isMob){var mSrc=img.getAttribute('data-zappy-mobile-src');var mPos=img.getAttribute('data-zappy-mobile-object-position');var mZoom=parseFloat(img.getAttribute('data-zappy-mobile-zoom'));if(mSrc){if(!img._zappyDesktop)img._zappyDesktop={src:img.getAttribute('src'),style:img.getAttribute('style')};img.src=mSrc;}if(mPos)img.style.setProperty('object-position',mPos,'important');if(mZoom>1){img.style.setProperty('transform','scale('+mZoom+')','important');img.style.setProperty('transform-origin',mPos||'50% 50%','important');}}}});}
+      function init(){
+        _fixHeroBgWrappers();
+        var mq=window.matchMedia('(max-width:768px)');
+        function onChange(e){if(e.matches)applyMobile();else revertDesktop();}
+        if(mq.matches)applyMobile();
+        else fixDesktopWrappers();
+        try{mq.addEventListener('change',onChange);}catch(e){mq.addListener(onChange);}
+      }
+      if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);
+      else setTimeout(init,50);
     })();
     </script>
 </body>

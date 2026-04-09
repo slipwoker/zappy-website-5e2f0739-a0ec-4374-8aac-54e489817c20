@@ -1,79 +1,63 @@
-# בית ציוני אמריקה — Generative Engine Optimization Map
-
-> Beit Tzioné America is a prestigious cultural and events venue located in Tel Aviv, offering halls for conferences, lectures, and cultural events. The venue blends Zionist heritage with a modern events experience, serving organizations and individuals seeking professional spaces with cultural significance. The site needs to showcase the venue's halls in a catalog format, manage upcoming events, and maintain an active blog and gallery.
+# Business — Generative Engine Optimization Map
 
 ---
 
 ## Pages
 
 ### בית
-https://beittzioniamerica.zappy5.app
+https://zappy-site-5e2f0739-a0ec-4374-8aac.onrender.com
 בית ציוני אמריקה בתל אביב הוא הבמה המושלמת לאירועי תרבות, כנסים והרצאות. חללים יוקרתיים עם עומק היסטורי ותשתית מקצועית מתקדמת. גלו את החוויה.
 
 ### אירועים
-https://beittzioniamerica.zappy5.app/events
+https://zappy-site-5e2f0739-a0ec-4374-8aac.onrender.com/events
 גלו את לוח האירועים המלא של בית ציוני אמריקה — הרצאות, כנסים ואירועי תרבות בלב תל אביב. הזמינו מקום עוד היום ותהיו חלק מחוויה בלתי נשכחת.
 
 ### גלריה
-https://beittzioniamerica.zappy5.app/gallery
+https://zappy-site-5e2f0739-a0ec-4374-8aac.onrender.com/gallery
 סיור ויזואלי בלעדי בחללי בית ציוני אמריקה — אולמות מרשימים לכנסים, הרצאות ואירועי תרבות בתל אביב. תמונות שיעשו לכם חשק להזמין את האירוע הבא כבר עכשיו.
 
 ### בלוג
-https://beittzioniamerica.zappy5.app/blog
+https://zappy-site-5e2f0739-a0ec-4374-8aac.onrender.com/blog
 טיפים מקצועיים, מאמרים על אירועי תרבות ועדכונים מעולם הכנסים וההרצאות — הבלוג של בית ציוני אמריקה הוא מקור הידע שלכם לתכנון אירוע מוצלח בתל אביב.
 
 ### צור קשר
-https://beittzioniamerica.zappy5.app/contact
+https://zappy-site-5e2f0739-a0ec-4374-8aac.onrender.com/contact
 צרו קשר עם צוות בית ציוני אמריקה לבירור זמינות ומחירים להשכרת אולמות לכנסים, הרצאות ואירועי תרבות בתל אביב. נחזור אליכם במהירות עם כל הפרטים.
 
 ### Products
-https://beittzioniamerica.zappy5.app/products
+https://zappy-site-5e2f0739-a0ec-4374-8aac.onrender.com/products
 המוצרים שלנו - בית ציוני אמריקה
 
 ### Product Detail
-https://beittzioniamerica.zappy5.app/product/:slug
+https://zappy-site-5e2f0739-a0ec-4374-8aac.onrender.com/product/:slug
 פרטי המוצר - בית ציוני אמריקה
 
 ### Category
-https://beittzioniamerica.zappy5.app/category/:slug
+https://zappy-site-5e2f0739-a0ec-4374-8aac.onrender.com/category/:slug
 מוצרים - בית ציוני אמריקה
 
 ## Legal & Policy
 
 ### Privacy Policy
-https://beittzioniamerica.zappy5.app/privacy
+https://zappy-site-5e2f0739-a0ec-4374-8aac.onrender.com/privacy
 Information about how user data is collected, stored, and protected.
 
 ### Terms & Conditions
-https://beittzioniamerica.zappy5.app/terms
+https://zappy-site-5e2f0739-a0ec-4374-8aac.onrender.com/terms
 Legal terms describing service usage, rights, and policies.
 
 ### Accessibility Statement
-https://beittzioniamerica.zappy5.app/accessibility
+https://zappy-site-5e2f0739-a0ec-4374-8aac.onrender.com/accessibility
 Information about WCAG compliance and accessibility features.
 
 ---
 
 # Business Context (for LLM understanding)
 
-## About בית ציוני אמריקה
-Beit Tzioné America is a prestigious cultural and events venue located in Tel Aviv, offering halls for conferences, lectures, and cultural events. The venue blends Zionist heritage with a modern events experience, serving organizations and individuals seeking professional spaces with cultural significance. The site needs to showcase the venue's halls in a catalog format, manage upcoming events, and maintain an active blog and gallery.
-
-## Services/Products
-- השכרת אולמות לכנסים
-- אירועי הרצאות
-- אירועי תרבות
-- ניהול אירועים קרובים
-
-## Target Audience
-ארגונים, חברות ואנשים פרטיים המחפשים אולמות לכנסים, הרצאות ואירועי תרבות
-
-## Industry
-אולמות אירועים ותרבות
-
+## About Business
 ---
 
 # Additional Resources
 
-- **Sitemap**: https://beittzioniamerica.zappy5.app/sitemap.xml
-- **Robots.txt**: https://beittzioniamerica.zappy5.app/robots.txt
+- **Sitemap**: https://zappy-site-5e2f0739-a0ec-4374-8aac.onrender.com/sitemap.xml
+- **Robots.txt**: https://zappy-site-5e2f0739-a0ec-4374-8aac.onrender.com/robots.txt
